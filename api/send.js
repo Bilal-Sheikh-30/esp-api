@@ -29,7 +29,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
       // Save the sensor data
-      const sensor_data = new SensorData(req.body);
+      const sensor_data = new Sensor(req.body);
       await sensor_data.save();
       res.status(200).send("Data saved");
     } catch (err) {
